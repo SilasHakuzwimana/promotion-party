@@ -1,0 +1,21 @@
+{
+  "name": "promotion-party",
+  "version": "1.0.0",
+  "description": "\"# promotion-party\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Silas HAKUZWIMANA",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "promotion-party"
+  }
+}
