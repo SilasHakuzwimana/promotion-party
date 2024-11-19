@@ -11,9 +11,9 @@
   "author": "Silas HAKUZWIMANA",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.21.1",
     "nodemon": "^3.1.7"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "promotion-party"
