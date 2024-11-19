@@ -1,0 +1,26 @@
+#ignore .env
+*.env
+#ignore .env.local
+*.env.local
+#ignore .env.development
+*.env.development
+#ignore .env.production
+*.env.production
+#ignore .env.test
+*.env.test
+#ignore packages
+packages/*/node_modules
+#ignore packages
+packages/*/dist
+#ignore packages
+packages/*/build
+#ignore
+.idea
+#ignore
+.vscode
+#ignore
+.DS_Store
+#ignore
+*package.json
+#ignore
+*package-lock.json

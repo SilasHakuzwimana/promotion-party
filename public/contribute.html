@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute to Our Promotion Party</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        .instructions {
+            font-size: 18px;
+            margin: 20px 0;
+            display: none;
+        }
+        .momo-code {
+            font-size: 24px;
+            color: #ff6347;
+            margin: 20px 0;
+        }
+        .cta-button {
+            background-color: #ff6347;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .cta-button:hover {
+            background-color: #e5533d;
+        }
+        .confirmation {
+            display: none;
+            color: green;
+            margin-top: 20px;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .step i {
+            color: green;
+            margin-right: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contribute to Our Promotion Party</h1>
+        <p>Your support helps us make a significant impact. Contribute 5000 FRW via MoMo Pay and be a part of our mission.</p>
+        <div class="momo-code">
+            MoMo Pay Code: <strong id="momo-code">704463</strong>
+            <button onclick="copyCode()">Copy Code</button>
+        </div>
+        <a href="#" class="cta-button" onclick="toggleInstructions()">Contribute Now</a>
+        <div class="instructions" id="instructions">
+            <p>Follow these simple steps to contribute:</p>
+            <div class="step"><i class="fas fa-check-circle"></i> Dial <strong>*182*8*1*704463#</strong> on your phone.</div>
+            <div class="step"><i class="fas fa-check-circle"></i> Follow the instructions to complete your contribution.</div>
+            <div class="step"><i class="fas fa-check-circle"></i> Enter the contribution amount: <strong>5000 FRW</strong>.</div>
+        </div>
+        <div class="confirmation" id="confirmation-message">
+            Thank you for your contribution!
+        </div>
+        <p>Your contribution will help us make a difference in our community.</p>
+    </div>
+    <div>
+        <a href="javascript:void(0)" onclick="redirectToParty()">Back to Party Details</a>
+    </div>
+
+    <script>
+        function copyCode() {
+            var code = document.getElementById("momo-code").innerText;
+            navigator.clipboard.writeText(code).then(function() {
+                alert("MoMo Pay Code copied to clipboard!");
+            }, function(err) {
+                console.error("Could not copy text: ", err);
+            });
+        }
+
+        function toggleInstructions() {
+            var instructions = document.getElementById("instructions");
+            var confirmation = document.getElementById("confirmation-message");
+            if (instructions.style.display === "none") {
+                instructions.style.display = "block";
+                confirmation.style.display = "block";
+            } else {
+                instructions.style.display = "none";
+                confirmation.style.display = "none";
+            }
+        }
+
+        function redirectToParty(){
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>
