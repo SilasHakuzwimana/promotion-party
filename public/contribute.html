@@ -29,21 +29,31 @@
             margin-bottom: 15px;
         }
 
+        .date-range {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
         .momo-code {
             font-size: 20px;
             margin: 20px 0;
             background-color: #f9f9f9;
-            padding: 15px;
+            padding: 15px 10px;
             border-radius: 10px;
             display: inline-block;
-            position: relative;
         }
 
-        .momo-code button {
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
+        .momo-code-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .momo-code-wrapper button {
+            margin-left: 15px;
             background-color: #2a9d8f;
             color: #ffffff;
             border: none;
@@ -54,7 +64,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .momo-code button:hover {
+        .momo-code-wrapper button:hover {
             background-color: #21867a;
         }
 
@@ -135,12 +145,15 @@
     <div class="container">
         <h1>Contribute to Our Promotion Party</h1>
         <p>Your support helps us make a significant impact. Contribute <strong>5000 FRW</strong> via MoMo Pay and be a part of our mission.</p>
+        <div class="date-range">
+            Contribution Period: <strong>1 December 2024</strong> to <strong>31 January 2025</strong>
+        </div>
         <div class="momo-code">
             MoMo Pay Code: <strong id="momo-code">704463</strong> 
-            <br />
-            <button onclick="copyCode()">Copy</button>
         </div>
-        <br />
+        <div class="momo-code-wrapper">
+            <button onclick="copyCode()">Copy Code</button>
+        </div>
         <br />
         <a href="javascript:void(0)" class="cta-button" onclick="toggleInstructions()">Contribute Now</a>
         <div class="instructions" id="instructions">
