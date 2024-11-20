@@ -60,6 +60,18 @@
             color: green;
             margin-right: 10px;
         }
+         footer {
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            background-color: #2a9d8f;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -86,7 +98,9 @@
     <div>
         <a href="javascript:void(0)" onclick="redirectToParty()">Back to Party Details</a>
     </div>
-
+    <footer>
+        <p>&copy; <span id="year"></span> GS Mareba Promotion 2018 Party || Developed by iTechnology Co. Ltd</p>
+    </footer>
     <script>
         function copyCode() {
             var code = document.getElementById("momo-code").innerText;
@@ -96,7 +110,9 @@
                 console.error("Could not copy text: ", err);
             });
         }
-
+         // Update the year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
         function toggleInstructions() {
             var instructions = document.getElementById("instructions");
             var confirmation = document.getElementById("confirmation-message");
