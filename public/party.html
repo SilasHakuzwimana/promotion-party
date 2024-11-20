@@ -6,73 +6,169 @@
     <title>Promotion Party Invitation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
             color: #333;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
+            background-color: #ffffff;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            text-align: center;
         }
+
         .headline {
-            font-size: 24px;
-            color: #ff6347;
+            font-size: 28px;
+            color: #2a9d8f;
+            margin-bottom: 20px;
         }
+
         .cta-button {
-            background-color: #ff6347;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
+            display: inline-block;
+            background-color: #2a9d8f;
+            color: #ffffff;
+            padding: 12px 25px;
             border-radius: 5px;
-            cursor: pointer;
             text-decoration: none;
             font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
+
         .cta-button:hover {
-            background-color: #e5533d;
+            background-color: #21867a;
         }
+
+        img {
+            border-radius: 15px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
         .step {
             display: flex;
-            text-align: center;
             align-items: center;
-            margin: 10px 0;
+            justify-content: center;
+            margin: 15px 0;
+            font-size: 16px;
         }
+
         .step i {
-            color: green;
+            color: #2a9d8f;
             margin-right: 10px;
+            font-size: 18px;
+        }
+
+        a {
+            color: #2a9d8f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            background-color: #2a9d8f;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .calendar {
+            margin-top: 15px;
+        }
+
+        .calendar input[type="date"] {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        i.fas.fa-calendar-alt {
+            font-size: 24px;
+            color: #2a9d8f;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        i.fas.fa-calendar-alt:hover {
+            color: #21867a;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <img src="images/ourImage.JPG" alt="Our promotion photo party" style="width:100% ;height:50%;">
+        <img src="images/ourImage.JPG" alt="Our promotion photo party">
         <h1 class="headline">Join Us for an Unforgettable Promotion Party in 2025! 🎉</h1>
-        <p>We are thrilled to invite you to our Promotion Party, hours of celebration, networking, and fun! This event is not just about celebrating our achievements but also about giving back. Your contributions will help us support to afford everything that will be needed.</p>
+        <p>We are thrilled to invite you to our Promotion Party—a celebration filled with joy, networking, and lasting memories! Your contributions will help ensure a successful event for everyone.</p>
         <h2>Confirm Attendance Now and Make a Difference!</h2>
-        <br>
-        <div class="step"><i class="fas fa-check-circle"></i><strong>Mark your calendar!</strong></div>
-        <br>
-        <p><strong>Date:</strong> Not yet set</p>
-        <p><strong>Time:</strong> Not yet set</p>
+
+        <div>
+            <h1>
+                <i class="fas fa-calendar-alt" style="cursor: pointer;" onclick="redirectToGoogleCalendar()"></i> Mark your calendar now
+            </h1>
+            <div class="calendar">
+                <label for="party-date">Select a date:</label><br>
+                <input type="date" id="party-date" value="2025-02-01" onchange="updateGoogleCalendarLink()">
+            </div>
+        </div>
+
+
+        <p><strong>Date:</strong> February 2025</p>
         <p><strong>Location:</strong> Mareba</p>
+
         <h3>How to Contribute:</h3>
-        <p class="step"><i class="fas fa-check-circle"></i><strong>Online:</strong> Visit our &nbsp;<a href="javascript:void(0)" onclick="redirectToContribute()">contribution page</a> &nbsp;to make a donation.</p>
-        <p class="step"><i class="fas fa-check-circle"></i><strong>At the Event:</strong> Bring your contributions to the party.</p>
+        <div class="step"><i class="fas fa-check-circle"></i><strong>Online:</strong> <a href="javascript:void(0)" onclick="redirectToContribute()">Visit our contribution page</a> to make a donation.</div>
+        <div class="step"><i class="fas fa-check-circle"></i><strong>At the Event:</strong> Bring your contributions to the party.</div>
+
         <h3>Why Your Contribution Matters:</h3>
-        <p>Your support will help us growth together and understanding the strength of our unity. Together, we can make a significant difference!</p>
-        <a href="mailto: hakusilas@gmail.com" class="cta-button">Confirm Attendance Now</a>
+        <p>Your support strengthens our community and unity, enabling us to achieve greater things together!</p>
+
+        <a href="mailto:hakusilas@gmail.com" class="cta-button">Confirm Attendance Now</a>
     </div>
+    <footer>
+        <p>&copy; <span id="year"></span> GS Mareba Promotion 2018 Party || Developed by iTechnology Co. Ltd</p>
+    </footer>
     <script>
-        function redirectToContribute(){
+        function redirectToContribute() {
             window.location.href = "/contribute";
+        }
+
+        // Update the year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function redirectToGoogleCalendar() {
+            const dateInput = document.getElementById("party-date").value;
+            if (!dateInput) {
+                alert("Please select a date first.");
+                return;
+            }
+    
+            // Format the date for Google Calendar (YYYYMMDD format)
+            const formattedDate = dateInput.replace(/-/g, '');
+            const eventUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Promotion+Party&dates=${formattedDate}T120000Z/${formattedDate}T150000Z&details=Join+us+for+an+unforgettable+promotion+party!&location=Mareba`;
+    
+            window.open(eventUrl, "_blank");
         }
     </script>
 </body>
