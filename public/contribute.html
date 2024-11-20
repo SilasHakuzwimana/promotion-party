@@ -6,84 +6,140 @@
     <title>Contribute to Our Promotion Party</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f9ff;
             color: #333;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
+
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: auto;
+            margin: 50px auto;
+            text-align: center;
         }
+
         h1 {
-            color: #ff6347;
+            font-size: 28px;
+            color: #2a9d8f;
+            margin-bottom: 15px;
         }
-        .instructions {
-            font-size: 18px;
-            margin: 20px 0;
-            display: none;
-        }
+
         .momo-code {
-            font-size: 24px;
-            color: #ff6347;
+            font-size: 20px;
             margin: 20px 0;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            position: relative;
         }
+
+        .momo-code button {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            background-color: #2a9d8f;
+            color: #ffffff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .momo-code button:hover {
+            background-color: #21867a;
+        }
+
         .cta-button {
-            background-color: #ff6347;
-            color: #fff;
-            padding: 10px 20px;
+            background-color: #2a9d8f;
+            color: #ffffff;
+            padding: 12px 25px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            text-decoration: none;
             font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
+
         .cta-button:hover {
-            background-color: #e5533d;
+            background-color: #21867a;
         }
-        .confirmation {
-            display: none;
-            color: green;
+
+        .instructions {
+            font-size: 16px;
             margin-top: 20px;
+            text-align: left;
+            display: none;
         }
+
+        .instructions p {
+            margin-bottom: 10px;
+        }
+
         .step {
             display: flex;
             align-items: center;
             margin: 10px 0;
+            color: #555;
         }
+
         .step i {
-            color: green;
+            color: #2a9d8f;
             margin-right: 10px;
+            font-size: 18px;
         }
-         footer {
+
+        .confirmation {
+            display: none;
+            color: #2a9d8f;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        footer {
             text-align: center;
             padding: 15px 0;
             margin-top: 20px;
             background-color: #2a9d8f;
-            color: #fff;
+            color: #ffffff;
         }
 
         footer p {
             margin: 0;
             font-size: 14px;
         }
+
+        a {
+            color: #2a9d8f;
+            text-decoration: none;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>Contribute to Our Promotion Party</h1>
-        <p>Your support helps us make a significant impact. Contribute 5000 FRW via MoMo Pay and be a part of our mission.</p>
+        <p>Your support helps us make a significant impact. Contribute <strong>5000 FRW</strong> via MoMo Pay and be a part of our mission.</p>
         <div class="momo-code">
             MoMo Pay Code: <strong id="momo-code">704463</strong>
-            <button onclick="copyCode()">Copy Code</button>
+            <button onclick="copyCode()">Copy</button>
         </div>
-        <a href="#" class="cta-button" onclick="toggleInstructions()">Contribute Now</a>
+        <a href="javascript:void(0)" class="cta-button" onclick="toggleInstructions()">Contribute Now</a>
         <div class="instructions" id="instructions">
             <p>Follow these simple steps to contribute:</p>
             <div class="step"><i class="fas fa-check-circle"></i> Dial <strong>*182*8*1*704463#</strong> on your phone.</div>
@@ -94,8 +150,6 @@
             Thank you for your contribution!
         </div>
         <p>Your contribution will help us make a difference in our community.</p>
-    </div>
-    <div>
         <a href="javascript:void(0)" onclick="redirectToParty()">Back to Party Details</a>
     </div>
     <footer>
@@ -104,18 +158,18 @@
     <script>
         function copyCode() {
             var code = document.getElementById("momo-code").innerText;
-            navigator.clipboard.writeText(code).then(function() {
+            navigator.clipboard.writeText(code).then(() => {
                 alert("MoMo Pay Code copied to clipboard!");
-            }, function(err) {
+            }).catch(err => {
                 console.error("Could not copy text: ", err);
             });
         }
-         // Update the year dynamically
+
         document.getElementById('year').textContent = new Date().getFullYear();
-        
+
         function toggleInstructions() {
-            var instructions = document.getElementById("instructions");
-            var confirmation = document.getElementById("confirmation-message");
+            const instructions = document.getElementById("instructions");
+            const confirmation = document.getElementById("confirmation-message");
             if (instructions.style.display === "none") {
                 instructions.style.display = "block";
                 confirmation.style.display = "block";
@@ -125,7 +179,7 @@
             }
         }
 
-        function redirectToParty(){
+        function redirectToParty() {
             window.location.href = "/";
         }
     </script>
